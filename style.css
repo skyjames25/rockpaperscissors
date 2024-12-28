@@ -1,0 +1,64 @@
+body, html {
+    background-image: url('./images/jjkimg.jpeg'); /* Path to your background image */
+    background-size: cover; /* Make sure the image covers the entire page */
+    background-repeat: no-repeat; /* Prevent tiling of the image */
+    background-position: center; /* Center the image on the page */
+    margin: 0; /* Remove default margins */
+    font-family: Arial, sans-serif; /* Optional: Set a font for better styling */
+    height:100%;
+}
+
+
+#rock {
+    color:blue;
+}
+
+.buttons{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    flex:1;
+    gap:10px
+
+}
+
+
+button img {
+    width:100px;
+    height:100px;
+
+}
+
+#result {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 80px;
+    padding-top: 50px;
+    overflow-y: auto;
+}
+
+.choice {
+    color: #FFD700; /* Gold */
+    font-size: 30px;
+}
+
+.outcome {
+    color: #FF4500; /* OrangeRed */
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.score {
+    color: green; /* DeepSkyBlue */
+    background-color: yellow;
+    font-size: 50px;
+}
+
+.finalresult {
+    color: green; /* DeepSkyBlue */
+    background-color: yellow;
+    font-size: 25px;
+}

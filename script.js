@@ -33,10 +33,12 @@ function playRound(humanSelection) {
     const computerSelection = getComputerChoice();
     let winner;
 
+    const humanImage = `<img src="./images/${humanSelection}.png" alt="${humanSelection}" style="width: 100px; height: 100px;">`;
+    const computerImage = `<img src="./images/${computerSelection}.png" alt="${computerSelection}" style="width: 100px; height: 100px;">`;
     resultDiv.innerHTML = `
-    <p>You Chose: ${humanSelection}</p>
-    <p>Computer chose ${computerSelection}</p>
-    `;
+    <p class="choice">You Chose: ${humanImage}</p>
+    <p class="choice">Computer chose: ${computerImage}</p>
+`;
 
     if (humanSelection=='paper' && computerSelection=='rock'||humanSelection=='scissors' && computerSelection=='paper' || humanSelection=='rock' && computerSelection=='scissors') {
         outcome = "You win this round!";
@@ -57,14 +59,15 @@ function playRound(humanSelection) {
     }
 
     resultDiv.innerHTML += `
-    <p>${outcome}</p>
-    <p>You: ${humanScore} | Computer: ${computerScore}</p>`;
+    <p class="outcome">${outcome}</p>
+    <p class="score">You: ${humanScore} | Computer: ${computerScore}</p>
+`;
 
     if (humanScore ==5) {
-        resultDiv.innerHTML +='<p>Congratulations! You are the winner of the game!</p>';
+        resultDiv.innerHTML +='<p class="finalresult">Congratulations! You are the winner of the game!</p>';
         resetGame();
     } else if (computerScore==5) {
-        resultDiv.innerHTML +='<p>Game Over!The computer wins the game.</p>';
+        resultDiv.innerHTML +='<p class="finalresult">Game Over!The computer wins the game.</p>';
         resetGame();
     }
 
@@ -76,7 +79,7 @@ function resetGame() {
     // Reset scores
     humanScore = 0;
     computerScore = 0;
-    resultDiv.innerHTML += `<p>The scores have been reset. Play again!</p>`;
+    resultDiv.innerHTML += `<p class="finalresult">The scores have been reset. Play again!</p>`;
     
 }
 
